@@ -1,0 +1,38 @@
+group 'groovy-vs-java-spring-boot'
+version '1.0-SNAPSHOT'
+
+buildscript {
+	ext {
+		springBootVersion = '1.5.2.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'groovy'
+apply plugin: 'org.springframework.boot'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile 'org.springframework.boot:spring-boot-starter-activemq'
+	compile 'org.springframework.boot:spring-boot-starter-actuator'
+	//compile('org.springframework.boot:spring-boot-starter-security')
+	compile 'org.springframework.boot:spring-boot-starter-web'
+	compile 'org.codehaus.groovy:groovy-all:2.3.11'
+
+	runtime 'com.h2database:h2'
+
+	testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+	testCompile 'junit:junit:4.11'
+}
