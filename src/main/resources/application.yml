@@ -1,0 +1,7 @@
+server:
+  port: 9082
+
+security:
+  user:
+    password: test
+    name: test
