@@ -1,4 +1,4 @@
-package com.tutorial
+package com.tutorial.controller
 
 import groovy.util.logging.Slf4j
 import org.springframework.web.bind.annotation.RequestMapping
