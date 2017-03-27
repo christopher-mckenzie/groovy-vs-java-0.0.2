@@ -11,7 +11,7 @@ import groovy.util.logging.Slf4j
 @Slf4j
 class ModelDao {
 
-    def base = 'https://watson-api-explorer.mybluemix.net/language-translator/api/v2/models?';
+    def base = 'https://watson-api-explorer.mybluemix.net/language-translator/api/v2/models?'
 
     Model getModelByLanguage(Language source, Language target){
         log.info "getModelByLanguage request - source:$source, target:$target "
