@@ -15,7 +15,7 @@ class TranslateDao {
 
     String getTranslation(Model model, String text) {
         log.info "getTranslation request - model:$model, text:$text "
-        def url = base + [model_id: model.model_id, source: model.source, target: model.target, text: text].
+        def url = base + [model_id: model.model_id, source: model.source, target: model.target, text: text.collect {URLEncoder.encode(it, 'UTF-8')}.join('')].
                 collect { k, p ->
                     "$k=$p"
                 }.join('&')
