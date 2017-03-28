@@ -12,13 +12,11 @@ import groovy.util.logging.Slf4j
 class ModelDao {
 
     def base = 'https://watson-api-explorer.mybluemix.net/language-translator/api/v2/models?'
-
+    def params_closure = { k, p -> "$k=$p"  }
     Model getModelByLanguage(Language source, Language target){
         log.info "getModelByLanguage request - source:$source, target:$target "
         def url = base + [source: source.name, target: target.name, default:true].
-                collect { k, p ->
-                    "$k=$p"
-                }.join('&')
+                collect(params_closure).join('&')
 
         URL model_api_url = new URL(url)
         def json = new JsonSlurper().parseText(model_api_url.text)
