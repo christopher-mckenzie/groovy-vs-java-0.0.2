@@ -10,14 +10,14 @@ import spock.lang.Specification
 class ModelSpec extends Specification{
 
     def 'getModelByLanguage'(){
-        given:
+        given: 'a source and target Language object'
         Language source = new Language(language:'es', name:'Spanish')
         Language target = new Language(language:'fr', name: 'French')
 
-        when:
+        when: 'calling to look up a model from ibm url with source and target Languages'
         Model model = new ModelDao().getModelByLanguage source, target
 
-        then:
+        then: 'model was found and matches conditions'
         model.source == 'es'
         model.target == 'fr'
         model.model_id == 'es-fr'

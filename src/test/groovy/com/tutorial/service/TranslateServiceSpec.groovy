@@ -8,14 +8,14 @@ import spock.lang.Specification
 class TranslateServiceSpec extends Specification{
 
     def "translate text"(){
-        given:
+        given: 'source & target language along with text to be translated'
             String source = 'English'
             String target = 'French'
             String text = 'My name is Chris'
             String result = ''
-        when:
+        when: 'calling ibm url to translate inputs'
             result = new TranslateService().translate source, target, text
-        then:
+        then: 'translation must equal: Mon nom est Chris'
         result == 'Mon nom est Chris'
         println "result: $result"
     }

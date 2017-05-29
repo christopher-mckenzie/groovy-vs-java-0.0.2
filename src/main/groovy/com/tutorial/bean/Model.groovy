@@ -1,8 +1,13 @@
 package com.tutorial.bean
 
+import groovy.transform.EqualsAndHashCode
+import groovy.transform.ToString
+
 /**
  * Created by cmcke on 3/26/2017.
  */
+@ToString
+@EqualsAndHashCode
 class Model {
     String model_id
     String name
@@ -15,7 +20,4 @@ class Model {
     String owner
     String status
 
-    String toString() {
-        return "Model{ model_id=$model_id, name=$name, source=$source, target=$target, base_model_id=$base_model_id, domain=$domain, customizable=$customizable, default_model=$default_model, owner=$owner, status=$status }";
-    }
 }

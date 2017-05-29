@@ -6,6 +6,9 @@ def appenders = ['CONSOLE', 'FILE']
 def logback_pattern = "%d{HH:mm:ss.SSS - MM/dd/yyyy} [%thread] %-5level %logger{36} - %msg%n"
 def APP_LOG = System.getProperty('APP_LOG')
 
+if(null == APP_LOG){
+    APP_LOG = 'C:/temp'
+}
 appender(appenders.get(0), ConsoleAppender) {
     encoder(PatternLayoutEncoder) {
         pattern = logback_pattern

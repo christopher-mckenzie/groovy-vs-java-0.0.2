@@ -11,10 +11,10 @@ import spock.lang.Specification
 class LanguageSpec extends Specification{
 
     def 'retrieve possible languages for translation'(){
-        when:
+        when: 'calling ibm url we get a list of possible langauges to translate true and from'
         List<Language> languages = new LanguageDao().getLanguages()
 
-        then:
+        then: 'result/languages  are not empty'
         assert languages.size() > 0
     }
 }
